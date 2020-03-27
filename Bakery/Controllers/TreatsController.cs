@@ -110,7 +110,7 @@ namespace Bakery.Controllers
         _db.FlavorTreat.Add(new FlavorTreat() { TreatId = treat.TreatId, FlavorId = FlavorId });
       }
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = treat.TreatId });
     }
   }
 }
