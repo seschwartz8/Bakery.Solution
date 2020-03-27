@@ -24,7 +24,6 @@ namespace Bakery.Controllers
       return View();
     }
 
-    [HttpGet("accounts/register")]
     public IActionResult Register()
     {
       return View();
@@ -45,7 +44,6 @@ namespace Bakery.Controllers
       }
     }
 
-    [HttpGet("accounts/signin")]
     public ActionResult Login()
     {
       return View();

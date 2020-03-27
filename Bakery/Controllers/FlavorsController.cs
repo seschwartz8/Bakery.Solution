@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bakery.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly BakeryContext _db;

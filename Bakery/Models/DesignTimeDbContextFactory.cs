@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Bakery.Models
 {
-  public class BakeryContextContextFactory : IDesignTimeDbContextFactory<BakeryContext>
+  public class BakeryContextFactory : IDesignTimeDbContextFactory<BakeryContext>
   {
 
     BakeryContext IDesignTimeDbContextFactory<BakeryContext>.CreateDbContext(string[] args)
