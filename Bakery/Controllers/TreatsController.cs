@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Bakery.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bakery.Controllers
@@ -23,18 +27,25 @@ namespace Bakery.Controllers
       return View(model);
     }
 
-    // public ActionResult Create()
-    // {
-    //   return View();
-    // }
+    public ActionResult Create()
+    {
+      List<SelectListItem> flavors = new SelectList(_db.Flavors, "FlavorId", "Name").ToList();
+      flavors.Insert(0, (new SelectListItem { Text = "[None]", Value = "0" }));
+      ViewBag.FlavorId = flavors;
+      return View();
+    }
 
-    // [HttpPost]
-    // public ActionResult Create(Cuisine cuisine)
-    // {
-    //   _db.Cuisines.Add(cuisine);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Create(Treat treat, int FlavorId)
+    {
+      _db.Treats.Add(treat);
+      if (FlavorId != 0)
+      {
+        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     // public ActionResult Details(int id)
     // {
