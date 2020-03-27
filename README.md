@@ -44,17 +44,17 @@ Epicodus Friday independent project: A C#/.NET Core MVC project that shows baker
 - User must log in prior to attaining CRUD functionality.
   - Sample input: User opens website
   - Expected output: User is greeted with the log in screen
-- Once logged in, user is shown a splash page with links to all treats and flavors.
+- Once logged in, user is shown a splash page with links on the navbar to all treats and flavors.
   - Sample input: User logs in
-  - Expected output: Splash page appears, with links to "see all treats" and "see all flavors"
+  - Expected output: Splash page appears, with links to "Home", "Treats", "Flavors", and "Accounts"
 - User can create a treat or flavor
-  - Sample input: User clicks on "create flavor"
+  - Sample input: User clicks on "add flavor"
   - Expected output: User is taken to form to create a flavor
 - User can click on any treat or flavor to view its details.
   - Sample input: User clicks on "sweet" flavor
   - Expected output: User is taken to page that shows all the "sweet" treats that exist (e.g. "chocolate" and "donuts")
 - User can add or remove a treat from its flavor (and vice versa).
-  - Sample input: User is on the "sweet" page and either clicks the "remove treat" button next to a treat or the "add treat" button.
+  - Sample input: User is on the "sweet" page and either clicks the "remove" button next to a treat or the "add treat" button.
   - Expected output: Selected treat is removed or added
 - User can delete any treat or flavor from the bakery system.
   - Sample input: User clicks on "delete" button for "sweet" flavor
