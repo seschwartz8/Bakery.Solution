@@ -4,12 +4,12 @@
 
 @using System.Security.Claims
 
-<h1>Authentication with Identity</h1>
+<h1>User Accounts</h1>
 
 <div class="content">
   @if (User.Identity.IsAuthenticated)
   {
-      <p>Hello @User.Identity.Name!</p>
+      <p>You are logged in as @User.Identity.Name</p>
       @using (Html.BeginForm("LogOff", "Account"))
       {
           <input type="submit" class="btn" value="Log out" />
@@ -20,5 +20,4 @@
 <div class="links">
   <p>@Html.ActionLink("Register", "Register")</p>
   <p>@Html.ActionLink("Log in", "Login")</p>
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
 </div>
