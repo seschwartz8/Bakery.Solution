@@ -44,9 +44,9 @@ Epicodus Friday independent project: A C#/.NET Core MVC project that shows baker
 - User must log in prior to attaining CRUD functionality.
   - Sample input: User opens website
   - Expected output: User is greeted with the log in screen
-- Once logged in, user is shown a splash page of all treats and flavors.
+- Once logged in, user is shown a splash page with links to all treats and flavors.
   - Sample input: User logs in
-  - Expected output: All existing treats and flavors appear on screen
+  - Expected output: Splash page appears, with links to "see all treats" and "see all flavors"
 - User can create a treat or flavor
   - Sample input: User clicks on "create flavor"
   - Expected output: User is taken to form to create a flavor
