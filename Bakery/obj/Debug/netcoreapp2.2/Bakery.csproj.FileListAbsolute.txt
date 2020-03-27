@@ -37,3 +37,4 @@
 /Users/Sarah Schwartz/Desktop/EPICODUS/Projects/Bakery.Solution/Bakery/obj/Debug/netcoreapp2.2/Bakery.dll
 /Users/Sarah Schwartz/Desktop/EPICODUS/Projects/Bakery.Solution/Bakery/obj/Debug/netcoreapp2.2/Bakery.pdb
 /Users/Sarah Schwartz/Desktop/EPICODUS/Projects/Bakery.Solution/Bakery/obj/Debug/netcoreapp2.2/Bakery.csproj.CopyComplete
+/Users/Sarah Schwartz/Desktop/EPICODUS/Projects/Bakery.Solution/Bakery/obj/Debug/netcoreapp2.2/Razor/Views/Treats/AddFlavor.cshtml.g.cs

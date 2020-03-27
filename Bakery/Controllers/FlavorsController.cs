@@ -31,7 +31,7 @@ namespace Bakery.Controllers
     public ActionResult Create()
     {
       List<SelectListItem> treats = new SelectList(_db.Treats, "TreatId", "Name").ToList();
-      treats.Insert(0, (new SelectListItem { Text = "[None]", Value = "0" }));
+      treats.Insert(0, (new SelectListItem { Text = "None", Value = "0" }));
       ViewBag.TreatId = treats;
       return View();
     }
@@ -91,6 +91,24 @@ namespace Bakery.Controllers
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       _db.Flavors.Remove(thisFlavor);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult AddTreat(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavors => flavors.FlavorId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+      return View(thisFlavor);
+    }
+
+    [HttpPost]
+    public ActionResult AddTreat(Flavor flavor, int TreatId)
+    {
+      if (TreatId != 0)
+      {
+        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = flavor.FlavorId, TreatId = TreatId });
+      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
