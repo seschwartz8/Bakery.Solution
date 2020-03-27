@@ -65,19 +65,19 @@ namespace Bakery.Controllers
       return RedirectToAction("Details", new { id = flavorId });
     }
 
-    // public ActionResult Edit(int id)
-    // {
-    //   var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
-    //   return View(thisCuisine);
-    // }
+    public ActionResult Edit(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
 
-    // [HttpPost]
-    // public ActionResult Update(Cuisine cuisine)
-    // {
-    //   _db.Entry(cuisine).State = EntityState.Modified;
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Update(Flavor flavor)
+    {
+      _db.Entry(flavor).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = flavor.FlavorId });
+    }
 
     // public ActionResult Delete(int id)
     // {
