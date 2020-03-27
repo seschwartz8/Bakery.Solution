@@ -46,6 +46,15 @@ form {
   margin: 10px;
 }
 
+a {
+  color: #915f41;
+}
+
+a:hover {
+  color: #433229;
+  text-decoration: none;
+}
+
 img {
   max-height: 500px;
   object-fit: cover;
