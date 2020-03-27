@@ -1,0 +1,53 @@
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+  color: #433229;
+}
+
+.container {
+  margin-top: 70px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  margin: 5% 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  margin: 5% 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 60px;
+  background-color: #433229;
+}
+
+.btn {
+  background-color: #433229;
+  color: white;
+  margin: 10px;
+}
+
+img {
+  max-height: 500px;
+  object-fit: cover;
+}
