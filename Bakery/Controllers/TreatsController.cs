@@ -47,14 +47,23 @@ namespace Bakery.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult Details(int id)
-    // {
-    //   var thisCuisine = _db.Cuisines
-    //     .Include(cuisine => cuisine.Restaurants)
-    //     .ThenInclude(join => join.Restaurant)
-    //     .FirstOrDefault(cuisine => cuisine.CuisineId == id);
-    //   return View(thisCuisine);
-    // }
+    public ActionResult Details(int id)
+    {
+      var thisTreat = _db.Treats
+        .Include(treat => treat.Flavors)
+        .ThenInclude(join => join.Flavor)
+        .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
+    }
+
+    [HttpPost]
+    public ActionResult RemoveFlavor(int joinId, int treatId)
+    {
+      var joinEntry = _db.FlavorTreat.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
+      _db.FlavorTreat.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = treatId });
+    }
 
     // public ActionResult Edit(int id)
     // {
